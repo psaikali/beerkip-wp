@@ -61,7 +61,7 @@ function validate_push_request( $valid, \WP_REST_Request $rest_request ) {
 	 * No user ID (comes from the magic of JWT auth, see 'determine_current_user' filter)?
 	 */
 	if ( get_current_user_id() === 0 ) {
-		return new \WP_Error( 'auth_invalid', __( 'Identité inconnue', 'beerkip' ), [ 'status' => 403 ] );
+		return new \WP_Error( 'auth_invalid', __( 'We don\'t know you.', 'beerkip' ), [ 'status' => 403 ] );
 	}
 
 	return true;
